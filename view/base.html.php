@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -24,13 +24,13 @@
                     <a class="nav-link" href="<?= URL ?>accueil">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= URL ?>games">Véhicules</a>
+                    <a class="nav-link" href="<?= URL ?>vehicule">Véhicules</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= URL ?>users">Conducteurs</a>
+                    <a class="nav-link" href="<?= URL ?>conducteur">Conducteurs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= URL ?>users">Relation</a>
+                    <a class="nav-link" href="<?= URL ?>relation">Relation</a>
                 </li>
             </ul>
         </div>

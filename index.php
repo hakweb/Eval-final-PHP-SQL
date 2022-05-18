@@ -2,33 +2,51 @@
 define("URL" , str_replace("index.php","",(isset($_SERVER['HTTPS']) ? "https" : "http") . 
 "://".$_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] ));
 
-require_once "controller/GameController.php";
-$gameController = new GameController();
+require_once "controller/CarController.php";
+$carController = new CarController();
 
 if(empty($_GET['page'])){
     require_once "view/home.view.php";
 }else{
     $url = explode("/", filter_var($_GET['page'], FILTER_SANITIZE_URL) );
     switch ($url[0]) {
-        case 'accueil': require_once "view/home.view.php";
+        case 'accueil': require_once "./view/home.view.php";
         break;
-
-        case 'games': 
+        
+        case 'vehicule': 
+        
             if(empty($url[1])){
-                $gameController->displayGames();
+                $carController->displayCars();
             }elseif($url[1] == "add"){
-                $gameController->newGameForm();
-            }elseif($url[1] == "gvalid"){
-                $gameController->newGameValidation();
+                $carController->newCarForm();
+            }elseif($url[1] == "cvalid"){
+                $carController->newCarValidation();
             }elseif($url[1] == "edit"){
-                $gameController->editGameForm($url[2]); 
+                $carController->editCarForm($url[2]); 
             }elseif($url[1] == "delete"){
-                echo "Supprimer un jeu";
+                // echo "Supprimer un vehicule";
+            }
+        break;
+        case 'vehicule': require_once "./view/cars.view.php";
+
+
+        case 'conducteur': 
+         
+            if(empty($url[1])){
+                $driverController->displayDrivers();
+            }elseif($url[1] == "add"){
+                $driverController->newDriverForm();
+            }elseif($url[1] == "conducteurvalid"){
+                $driverController->newDriverValidation();
+            }elseif($url[1] == "edit"){
+                $driverController->editDriverForm($url[3]); 
+            }elseif($url[1] == "delete"){
+                // echo "Supprimer un conducteur";
             }
         break;
 
         
-        case 'users': require_once "view/users.view.php";
+        case 'conducteur':  require_once "./view/driver.view.php";
         break;
     }
 }

@@ -1,20 +1,22 @@
 <?php
 
-class Game {
+class Car {
 
 
     private $id;
-    private $title;
-    private $nbPlayers;
+    private $nom;
+    private $prenom;
 
-    public function __construct($id,$title,$nbPlayers){
+    public function __construct($id,$nom,$prenom){
 
         $this->id = $id;
-        $this->title = $title;
-        $this->nbPlayers = $nbPlayers;
+        $this->nom = $nom;
+        $this->prenom = $prenom;
         
     }
 
+
+    
     /**
      * Get the value of id
      */ 
@@ -36,32 +38,32 @@ class Game {
     }
 
     /**
-     * Get the value of title
+     * Get the value of nom
      */ 
-    public function getTitle()
+    public function getNom()
     {
-        return $this->title;
+        return $this->titlenom;
     }
 
     /**
-     * Set the value of title
+     * Set the value of nom
      *
      * @return  self
      */ 
-    public function setTitle($title)
+    public function setNom($nom)
     {
-        $this->title = $title;
+        $this->nom = $nom;
 
         return $this;
     }
 
 
     /**
-     * Get the value of nbPlayers
+     * Get the value of prenom
      */ 
-    public function getNbPlayers()
+    public function getPrenom()
     {
-        return $this->nbPlayers;
+        return $this->prenom;
     }
 
     /**
@@ -69,10 +71,10 @@ class Game {
      *
      * @return  self
      */ 
-    public function setNbPlayers($nbPlayers)
+    public function setPrenom($prenom)
     {
-        $this->nbPlayers = $nbPlayers;
+        $this->prenom = $prenom;
 
-        return $this;
+        return $this->prenom;
     }
 }

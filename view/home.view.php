@@ -1,6 +1,6 @@
 <?php  ob_start(); ?>
 
-<p>Bienvenue sur notre store !</p>
+<p>Bienvenue sur notre Site !</p>
 
 
 <?php
