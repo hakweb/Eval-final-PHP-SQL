@@ -1,28 +1,29 @@
 <?php
- require_once "Manager.php";
- require_once "Driver.php";
+ require_once "./modele/Manager.php";
+ require_once "./modele/Driver.php";
 
-class UserManager extends Manager {
+class DriverManager extends Manager {
 
-    private $users;
+    private $drivers;
 
-    public function addUser($user){
-        $this->users[] = $user;
+    public function addDriver($driver){
+        $this->drivers[] = $driver;
     }
 
-    public function getUsers(){
-        return $this->users;
+    public function getDrivers(){
+        return $this->drivers;
     }
 
-    public function loadUsers(){
-        $req = $this->getBdd()->prepare("SELECT * FROM users");
+    public function loadDrivers(){
+        $req = $this->getBdd()->prepare("SELECT * FROM drivers");
         $req->execute();
-        $myUsers = $req->fetchAll(PDO::FETCH_ASSOC);
+        $myDrivers = $req->fetchAll(PDO::FETCH_ASSOC);
         $req->closeCursor();
 
-        foreach($myUsers as $user){
-            $u = new User($user['id'],$user['firstname'],$user['lastname']);
-            $this->addUser($u);
+        foreach($myDrivers as $driver){
+            $u = new Driver ($driver['id'],$driver['prenom'],$driver['nom']);
+
+            $this->addDriver($u);
         }
 
     }

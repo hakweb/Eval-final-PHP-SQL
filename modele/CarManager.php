@@ -1,6 +1,6 @@
 <?php
- require_once "./Manager";
- require_once "./Car.php";
+ require_once "./modele/Manager.php";
+ require_once "./modele/Car.php";
 
 class CarManager extends Manager {
 
@@ -9,6 +9,7 @@ class CarManager extends Manager {
     public function addCar($car){
         $this->cars[] = $car;
     }
+    
 
     public function getCars(){
         return $this->cars;
@@ -23,7 +24,7 @@ class CarManager extends Manager {
     }
 
     public function loadCars(){
-        $req = $this->getBdd()->prepare("SELECT * FROM car");
+        $req = $this->getBdd()->prepare("SELECT * FROM vtc");
         $req->execute();
         $myCars = $req->fetchAll(PDO::FETCH_ASSOC);
         $req->closeCursor();
@@ -35,8 +36,8 @@ class CarManager extends Manager {
 
     }
 
-    public function newCarDB($title,$nb_players){
-        $req = "INSERT INTO vehicule (marque, modele, couleur, immatriculation) VALUES (:marque, :modele, :couleur, :immatriculation)";
+    public function newCarDB($marque, $modele, $couleur, $immatriculation){
+        $req = "INSERT INTO cars (marque, modele, couleur, immatriculation) VALUES (:marque, :modele, :couleur, :immatriculation)";
         $statement = $this->getBdd()->prepare($req);
         $statement->bindValue(":marque",$marque, PDO::PARAM_STR);
         $statement->bindValue(":modele",$modele, PDO::PARAM_STR);

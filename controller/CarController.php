@@ -20,10 +20,11 @@ class CarController {
     }
 
     public function newCarValidation(){
-      $this->carManager->newCarDB($_POST['nom'],$_POST['prenom']);
-      header('Location:' . URL . "vehicule" );
-   
+      $this->carManager->newCarDB($_POST['marque'],$_POST['modele'],$_POST['couleur'],$_POST['immatriculation']);
+      header('Location:' . URL . "cars" );
     }
+    
+    
 
     public function editCarForm($id){
             echo $id;

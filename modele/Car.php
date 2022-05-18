@@ -1,23 +1,27 @@
-<?php
 
-class Car {
+    <?php
 
+    class Car
+    {
 
-    private $id;
-    private $nom;
-    private $prenom;
-
-    public function __construct($id,$nom,$prenom){
-
-        $this->id = $id;
-        $this->nom = $nom;
-        $this->prenom = $prenom;
-        
-    }
+        private $id;
+        private $marque;
+        private $modele;
+        private $couleur;
+        private $immatriculation;
 
 
+        public function __construct($id, $marque, $modele, $couleur, $immatriculation,)
+        {
+            $this->id = $id;
+            $this->marque = $marque;
+            $this->modele = $modele;
+            $this->couleur = $couleur;
+            $this->immatriculation = $immatriculation;
+        }
     
-    /**
+
+        /**
      * Get the value of id
      */ 
     public function getId()
@@ -38,43 +42,88 @@ class Car {
     }
 
     /**
-     * Get the value of nom
+     * Get the value of marque
      */ 
-    public function getNom()
+    public function getMarque()
     {
-        return $this->titlenom;
+        return $this->marque;
     }
 
     /**
-     * Set the value of nom
+     * Set the value of marque
      *
      * @return  self
      */ 
-    public function setNom($nom)
+    public function setMarque($marque)
     {
-        $this->nom = $nom;
+        $this->marque = $marque;
 
         return $this;
     }
 
 
     /**
-     * Get the value of prenom
+     * Get the value of modele
      */ 
-    public function getPrenom()
+    public function getModele()
     {
-        return $this->prenom;
+        return $this->modele;
     }
 
     /**
-     * Set the value of nbPlayers
+     * Set the value of modele
      *
      * @return  self
      */ 
-    public function setPrenom($prenom)
+    public function setmodele($modele)
     {
-        $this->prenom = $prenom;
+        $this->modele = $modele;
 
-        return $this->prenom;
+        return $this;
     }
+
+
+/**
+     * Get the value of couleur
+     */ 
+    public function getCouleur()
+    {
+        return $this->couleur;
+    }
+
+    /**
+     * Set the value of couleur
+     *
+     * @return  self
+     */ 
+    public function setCouleur($couleur)
+    {
+        $this->couleur = $couleur;
+
+        return $this;
+    }
+    /**
+     * Get the value of immatriculation
+     */ 
+    public function getImmatriculation()
+    {
+        return $this->immatriculation;
+    }
+
+    /**
+     * Set the value of immatriculation
+     *
+     * @return  self
+     */ 
+    public function setImmatriculation($immatriculation)
+    {
+        $this->immatriculation = $immatriculation;
+
+        return $this;
+    }
+
+
+
+
+
 }

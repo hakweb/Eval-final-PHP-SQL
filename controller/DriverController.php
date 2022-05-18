@@ -21,7 +21,7 @@ class DriverController {
 
     public function newDriverValidation(){
       $this->driverManager->newDriverDB($_POST['nom'],$_POST['prenom']);
-      header('Location:' . URL . "conducteur" );
+      header('Location:' . URL . "driver" );
    
     }
 
